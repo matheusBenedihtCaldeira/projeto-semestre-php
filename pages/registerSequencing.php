@@ -4,13 +4,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Registrar conta</title>
+  <title>Registrar sequenciamento</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
 </head>
 
 <body>
-  <div class="container">
+<?php include 'navbar.php' ?>
+<div class="container">
+    
     <div class="row">
       <div class="col-md-12">
         <div class="mt-5">
@@ -19,8 +21,7 @@
           #Verifica se tem algum erro presente na URL 
           if (isset($_GET['error'])) {
           #Exibe uma mensagem de aviso caso a requisição tenha sido enviada incorretamente e retornado para o formulario
-          echo '<div class="p-3 bg-danger-subtle border border-danger-subtle rounded-3">
-          Requisição enviada incorretamente. Certifique-se de enviar todos os dados necessários</div>';
+          echo '<div class="alert alert-danger col-md-7" role="alert">Requisição enviada incorretamente. Certifique-se de enviar todos os dados necessários</div>';
           }
           ?>
         </div>
@@ -57,7 +58,7 @@
             <div class="row">
               <div class="col-md-10 mb-3">
                 <button class="btn btn-primary">Enviar</button>
-                <button class="btn">Cancelar</button>
+                <button class="btn disabled">Cancelar</button>
               </div>
             </div>
           </form>

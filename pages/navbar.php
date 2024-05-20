@@ -9,8 +9,23 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <style>
+
+        a{
+            color: #f8fafc;
+            text-decoration: none;  
+        }
+
+        .my-nav-link{
+            color: #f8fafc;
+            text-decoration: none;  
+        }
+        .my-nav-link:hover{
+            color: #cbd5e1;
+            text-decoration: none;  
+        }
         .bg-gray{
-            background-color: #1e293b;
+            background-color: #155e75;
+            color: white;
 
         }
         body{
@@ -20,31 +35,21 @@
 </head>
 <body >
 <div class="row">
-            <div class="col-md-12">
-                <nav class="navbar navbar-expand-lg bg-gray">
-                    <div class="container-fluid">
-                    <a class="navbar-brand p-4 ms-4" href="#">
-                    <img width="54" height="54" src="icons8-biotecnologia-96.png" alt="biotech"/>
-                    GeneTech
-                    </a>
-                    <div class="collapse navbar-collapse">
-                        <ul class="navbar-nav mr-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Despesas</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Renda</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Carteiras</a>
-                            </li>
+            <div class="col-md-12 bg-gray">
+                <div class="container-fluid d-flex justify-content-start align-items-center p-4">
+                    <div class="d-flex align-items-center">
+                        <a href="#" class="fs-4">
+                            <img width="54" height="54" src="../public/images/icons8-biotecnologia-96.png" alt="biotech"/>
+                            <span>BioSequencer</span>
+                        </a>
+                    </div>
+                    <div class="ms-4">
+                        <ul class="nav">
+                            <li class="nav-item mx-3"><a class="my-nav-link" href="#">Home</a></li>
+                            <li class="nav-item"><a href="/projeto-php-sequenciamento/pages/sequencing.php" class="my-nav-link">Sequenciamentos</a></li>
                         </ul>
                     </div>
-                    </div>
-                </nav>
+                </div>
             </div>
         </div>
 </body>
