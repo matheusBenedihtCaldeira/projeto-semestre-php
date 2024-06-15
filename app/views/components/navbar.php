@@ -15,10 +15,10 @@
         <div class="d-flex justify-content-end">
           <ul class="nav m-auto fs-5 align-items-center">
             <li class="nav-item mx-2">
-              <a href="#" class="my-nav-link">Home</a>
+              <a href="/projeto-semestre-php/app/views/index.php" class="my-nav-link">Home</a>
             </li>
             <li class="nav-item mx-2">
-              <a href="#" class="my-nav-link">Sequencing</a>
+              <a href="/projeto-semestre-php/app/views/sequencing.php" class="my-nav-link">Sequencing</a>
             </li>
             <li class="nav-item mx-2">
               <a href="#" class="my-nav-link">About us</a>
