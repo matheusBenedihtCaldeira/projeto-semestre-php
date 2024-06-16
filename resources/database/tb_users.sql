@@ -4,5 +4,6 @@ CREATE TABLE tb_users(
     last_name VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
     password VARCHAR(255) NOT NULL,
-    date_birthday DATE NOT NULL
+    gender CHAR(1) NOT NULL,
+    date_of_birth DATE NOT NULL
 );

@@ -1,6 +1,5 @@
 <?php
     #!!!!!!!!IMPORTANTE!!!!!!! LEMBRAR DE ATUALIZAR O PARAMETRO DO ARQUIVO MY.INI DENTRO DA PASTA BIN DO MYSQL. Deixar o parametro max_allowed_packet=64M
-    
     #Verifica se a requisição enviada foi POST e se foi inserido algum arquivo de sequenciamento 
     if ($_SERVER["REQUEST_METHOD"] === "POST" && is_uploaded_file($_FILES['sequencing_file']['tmp_name'])) {
         require '../config/database.php';

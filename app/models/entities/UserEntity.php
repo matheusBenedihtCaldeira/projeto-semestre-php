@@ -1,5 +1,6 @@
 <?php
-    class User{
+
+    class UserEntity{
         private $id;
         private $firstName;
         private $lastName;
@@ -8,8 +9,7 @@
         private $gender;
         private $dateOfBirth;
 
-        public function __construct($id, $firstName, $lastName, $email, $password, $gender, $dateOfBirth, $project, $sequencing){
-            $this->id = $id;
+        public function __construct($firstName = null, $lastName = null, $email = null, $password = null, $gender = null, $dateOfBirth = null){
             $this->firstName = $firstName;
             $this->lastName = $lastName;
             $this->email = $email;
@@ -76,6 +76,10 @@
 
         public function __toString(){
             return "First name: {$this->firstName} - Last name: {$this->firstName} - E-mail: {$this->email} - Gender: {$this->gender} - Data of birth: {$this->dateOfBirth}";
+        }
+
+        public function login($email, $password){
+            
         }
     }
 ?>

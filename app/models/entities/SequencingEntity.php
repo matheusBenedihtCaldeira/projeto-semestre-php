@@ -1,5 +1,4 @@
 <?php 
-
     class SequencingEntity{
         private $id;
         private $name;
