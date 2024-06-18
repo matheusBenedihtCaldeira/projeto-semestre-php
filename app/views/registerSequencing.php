@@ -1,3 +1,9 @@
+<?php 
+  include_once "../repositories/ProjectRepository.php";
+  include_once "../models/entities/ProjectEntity.php";
+  $projectRepository = new ProjectRepository();    
+  $projects = $projectRepository->findAll();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,21 +42,28 @@
           ?>
         </div>
         <div class="mt-5">
-          <form action="../scripts/registerSequencing.php" enctype="multipart/form-data" method="post">
+          <form action="../controllers/sequencing/RegisterSequencingController.php" enctype="multipart/form-data" method="POST">
             <div class="row">
               <div class="col-md-5 mb-3">
-                <label for="name" class="form-label">Nome</label>
+                <label for="name" class="form-label">Nome do Projeto</label>
                 <input type="text" name="name" class="form-control" />
               </div>
               <div class="col-md-5 mb-3">
-                <label for="origin" class="form-label">Origem</label>
-                <input type="text" name="origin" class="form-control" />
-              </div>
+                    <label for="project" class="form-label">Projeto</label>
+                    <select name="project" class="form-control">
+                      <option value="" selected>Selecione um projeto</option>
+                      <?php
+                        foreach($projects as $project){
+                          echo('<option value="' . $project->getId() . '">' . $project->getName() . '</option>');
+                        }
+                      ?>
+                    </select>
+                  </div>
             </div>
             <div class="row">
               <div class="col-md-5 mb-3">
-                <label for="extraction_date" class="form-label">Data de Extração</label>
-                <input type="date" name="extraction_date" class="form-control" />
+                <label for="method" class="form-label">Método de Sequenciamento</label>
+                <input type="text" name="method" class="form-control" />
               </div>
               <div class="col-md-5">
                 <label for="sequencing_file" class="form-label">Arquivo do Sequenciamento</label>
@@ -66,10 +79,9 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-md-10 mb-3">
-                <button class="btn btn-primary">Enviar</button>
-                <button class="btn disabled">Cancelar</button>
-              </div>
+            <div class="col-md-10 mb-3">
+                  <input  name="register" class="btn btn-primary" type="submit" value="Cadastrar">
+                </div>
             </div>
           </form>
         </div>

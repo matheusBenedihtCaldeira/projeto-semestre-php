@@ -3,17 +3,16 @@
         private $id;
         private $name;
         private $method;
-        private $length;
         private $sequencing;
         private $project;
+        private $comments;
 
-        public function __construct($id, $name, $method, $length, $sequencing, $project){
-            $this->id = $id;
+        public function __construct($name = null, $method = null, $sequencing = null, $project = null, $comments = null){
             $this->name = $name;
             $this->method = $method;
-            $this->length = $length;
             $this->sequencing = $sequencing;
             $this->project = $project;
+            $this->comments = $comments;
         }
 
         public function getId(){
@@ -40,14 +39,6 @@
             $this->method = $method;
         }
 
-        public function getLength(){
-            return $this->length;
-        }
-
-        public function setLength($length){
-            $this->length = $length;
-        }
-
         public function getSequencing(){
             return $this->sequencing;
         }
@@ -64,8 +55,16 @@
             $this->project = $project;
         }
 
+        public function getComments(){
+            return $this->comments;
+        }
+
+        public function setComments($comments){
+            $this->comments = $comments;
+        }
+
         public function __toString(){
-            return "Name: {$this->name} - Method: {$this->method} - Length: {$this->length} - Sequencing: {$this->sequencing}";
+            return "Name: {$this->name} - Method: {$this->method} - Sequencing: {$this->sequencing} - Project: {$this->getProject()->getName()} - Comments: {$this->comments}";
         }
     }
 ?>

@@ -18,10 +18,10 @@
               <a href="/projeto-semestre-php/app/views/index.php" class="my-nav-link">Home</a>
             </li>
             <li class="nav-item mx-2">
-              <a href="/projeto-semestre-php/app/views/sequencing.php" class="my-nav-link">Sequencing</a>
+              <a href="/projeto-semestre-php/app/views/projects.php" class="my-nav-link">Projetos</a>
             </li>
             <li class="nav-item mx-2">
-              <a href="#" class="my-nav-link">About us</a>
+              <a href="/projeto-semestre-php/app/views/sequencings.php" class="my-nav-link">Sequenciamentos</a>
             </li>
             <li class="nav-item mx-2">
               <a href="#" class="my-nav-link"

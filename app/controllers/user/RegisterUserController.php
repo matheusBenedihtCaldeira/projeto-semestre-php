@@ -1,5 +1,5 @@
 <?php
-    include_once "../../repositories/user/UserRepository.php";
+    include_once "../../repositories/UserRepository.php";
     include_once "../../models/entities/UserEntity.php";
 
     $userRepository = new UserRepository();

@@ -1,5 +1,3 @@
 <?php 
-    include '../views/registerProjectForm.html';
-
-    
+    include '../views/registerProjectForm.php';
 ?>

@@ -1,5 +1,5 @@
 <?php
-    include_once "../../repositories/project/ProjectRepository.php";
+    include_once "../../repositories/ProjectRepository.php";
     include_once "../../models/entities/ProjectEntity.php";
 
     $projectRepository = new ProjectRepository();
@@ -13,10 +13,9 @@
                 $data['end_date'],
                 $data['description']);
             $projectRepository->save($project);
+            header("Location: ../../views/projects.php");
         }catch(Exception $e){
             echo("Erro: ". $e->getMessage());
         }
-    }else{
-        echo("Teste");
     }
 ?>
