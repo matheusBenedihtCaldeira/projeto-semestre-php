@@ -1,3 +1,7 @@
+<?php 
+  include_once '../repositories/database.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -84,7 +88,7 @@
                 class="card-img-top"
               />
               <div class="card-body">
-                <h3 class="text-center">Web Development</h3>
+                <h3 class="text-center">Lorem ipsum</h3>
                 <hr class="mx-auto w-75" />
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
@@ -102,7 +106,7 @@
                 class="card-img-top"
               />
               <div class="card-body">
-                <h3 class="text-center">Web Development</h3>
+                <h3 class="text-center">Lorem ipsum</h3>
                 <hr class="mx-auto w-75" />
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
@@ -120,7 +124,7 @@
                 class="card-img-top"
               />
               <div class="card-body">
-                <h3 class="text-center">Web Development</h3>
+                <h3 class="text-center">Lorem ipsum</h3>
                 <hr class="mx-auto w-75" />
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut

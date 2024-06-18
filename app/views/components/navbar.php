@@ -24,7 +24,7 @@
               <a href="/projeto-semestre-php/app/views/sequencings.php" class="my-nav-link">Sequenciamentos</a>
             </li>
             <li class="nav-item mx-2">
-              <a href="#" class="my-nav-link"
+              <a href="/projeto-semestre-php/app/views/user.php" class="my-nav-link"
                 ><i class="bi bi-person" style="font-size: 2rem"></i
               ></a>
             </li>

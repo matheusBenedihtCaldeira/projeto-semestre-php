@@ -77,9 +77,5 @@
         public function __toString(){
             return "First name: {$this->firstName} - Last name: {$this->firstName} - E-mail: {$this->email} - Gender: {$this->gender} - Data of birth: {$this->dateOfBirth}";
         }
-
-        public function login($email, $password){
-            
-        }
     }
 ?>

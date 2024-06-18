@@ -8,16 +8,22 @@
 
 </head>
 <body class="bg-white">
-
 <div class="container d-flex justify-content-center align-items-center mt-5">
   <div class="col-sm-8 col-md-6 col-lg-4">
     <div class="text-center mb-4">
     <img width="94" height="94" src="https://img.icons8.com/3d-fluency/94/biotech.png" alt="biotech"/>
     <h2 class="h4 mb-3 fw-bold">Entrar na sua conta</h2>
-
+    <?php
+          #Verifica se tem algum erro presente na URL 
+          if (isset($_GET['error'])) {
+          #Exibe uma mensagem de aviso caso a requisição tenha sido enviada incorretamente e retornado para o formulario
+          echo '<div class="alert alert-danger" role="alert">Usuário ou senha inválido</div>';
+          }
+          ?>
+    
 </div>
     
-    <form action="#" method="POST">
+    <form action="../controllers/user/LoginController.php" method="POST">
       <div class="mb-3">
         <label for="email" class="form-label">E-mail</label>
         <input type="email" class="form-control" id="email" name="email" placeholder="email@email.com" required>
@@ -27,7 +33,7 @@
         <div class="d-flex justify-content-between">
           <label for="password" class="form-label">Senha</label>
         </div>
-        <input type="password" class="form-control" id="password" name="senha" placeholder="••••••••••••" required>
+        <input type="password" class="form-control" id="password" name="password" placeholder="••••••••••••" required>
       </div>
       
       <div class="d-grid">

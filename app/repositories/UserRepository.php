@@ -1,7 +1,6 @@
 <?php 
-    
     include 'database.php';
-
+    include '../models/entities/UserEntity.php';
     class UserRepository{
 
         private $conn;
@@ -31,15 +30,61 @@
             }
         }
 
-        public function findByEmailAndPassword($email, $password){
+        public function login($email, $password){
             try{
                 $sql = "SELECT * FROM tb_users WHERE email = :email AND password = :password;";
                 $dbStmt = $this->conn->prepare($sql);
-                $dbStmt->bindValue(":email",$email);
-                $dbStmt->bindValue(":password",$password);
-                return $dbStmt->execute();
+                $dbStmt->bindValue(":email", $email);
+                $dbStmt->bindValue(":password", $password);
+                $dbStmt->execute();
+                if($dbStmt->rowCount() > 0){
+                    $result = $dbStmt->fetch(PDO::FETCH_ASSOC);
+                    $_SESSION['idUser'] = $result['id'];
+                    return true;
+                }else{
+                    return false;
+                }
             }catch(Exception $e){
                 echo("Erro: ". $e->getMessage());
+            }
+        }
+
+        public function findById($id){
+            try{
+                $sql = "SELECT * FROM tb_users WHERE id = :id;";
+                $dbStmt = $this->conn->prepare($sql);
+                $dbStmt->bindValue(":id", $id);
+                $dbStmt->execute();
+                $row = $dbStmt->fetch(PDO::FETCH_ASSOC);
+                if($row){
+                    return $this->convertUser($row);
+                }
+                return null;
+            }catch(Exception $e){
+                echo("Erro: ". $e->getMessage());
+            }
+        }
+
+        public function convertUser($data){
+            $user = new UserEntity();
+            $user->setId($data['id']);
+            $user->setFirstName($data['first_name']);
+            $user->setLastName($data['last_name']);
+            $user->setEmail($data['email']);
+            $user->setPassword($data['password']);
+            $user->setGender($data['gender']);
+            $user->setDateOfBirth($data['date_of_birth']);
+            return $user;
+        }
+
+        public function delete($id){
+            try{
+                $sql = "DELETE FROM tb_users WHERE id = :id";
+                $dbStmt = $this->conn->prepare($sql);
+                $dbStmt->bindValue(":id", $id);
+                return $dbStmt->execute();
+            }catch(Exception $e){
+                echo("Error: ". $e->getMessage());
             }
         }
     }
