@@ -50,7 +50,10 @@
             <hr class="border border-primary border-2 opacity-50">
             <div>
             <a href="logout.php">
-                <button class="btn btn-danger btn-sm" type="button">Logout</button>
+                <button class="btn btn-primary btn-sm" type="button">Logout</button>
+            </a>
+            <a href="../controllers/user/DeleteUserController.php?id=<?= $user->getId() ?>">
+                <button class="btn btn-danger btn-sm" type="button">Excluir</button>
             </a>
             </div>
         </div>

@@ -15,7 +15,7 @@
                 $data['gender'], 
                 $data['date_of_birth']);
                 $userRepository->save($user);
-                header("Location: ../../views/index.php");
+                header("Location: ../../views/login.php");
         }catch(Exception $e){
             echo("Erro: ". $e->getMessage());
         }
